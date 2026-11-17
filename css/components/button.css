@@ -1,0 +1,90 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--duration-fast) var(--ease-standard),
+              transform var(--duration-instant) var(--ease-standard),
+              box-shadow var(--duration-fast) var(--ease-standard);
+  white-space: nowrap;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn--primary {
+  background-color: var(--accent);
+  color: var(--accent-text);
+}
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+}
+.btn--primary:active:not(:disabled) {
+  background-color: var(--accent-active);
+}
+
+.btn--ghost {
+  color: var(--text-secondary);
+}
+.btn--ghost:hover:not(:disabled) {
+  background-color: var(--accent-subtle);
+  color: var(--accent);
+}
+
+.btn--outline {
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
+}
+.btn--outline:hover:not(:disabled) {
+  background-color: var(--bg-surface-sunken);
+  border-color: var(--text-secondary);
+}
+
+.btn--danger {
+  background-color: var(--color-danger);
+  color: #ffffff;
+}
+.btn--danger:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn--sm {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-xs);
+}
+
+.btn--lg {
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-base);
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  padding: 0;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  transition: background-color var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+}
+.btn-icon:hover:not(:disabled) {
+  background-color: var(--bg-surface-sunken);
+  color: var(--text-primary);
+}
+.btn-icon:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.btn-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
