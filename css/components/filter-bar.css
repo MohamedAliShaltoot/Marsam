@@ -1,0 +1,96 @@
+/**
+ * Boardly Search & Filter Bar Component
+ */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 240px;
+}
+
+.search-input-wrapper svg {
+  position: absolute;
+  left: var(--space-2);
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: var(--space-1) var(--space-6) var(--space-1) calc(var(--space-2) + 20px);
+  font-size: var(--font-size-sm);
+  background-color: var(--bg-surface-sunken);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  transition: width var(--duration-fast) var(--ease-standard),
+              border-color var(--duration-fast) var(--ease-standard);
+}
+
+.search-input:focus {
+  border-color: var(--border-focused);
+  width: 280px;
+}
+
+.search-kbd-hint {
+  position: absolute;
+  right: var(--space-2);
+  font-size: 10px;
+  color: var(--text-muted);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xs);
+  padding: 1px 4px;
+  pointer-events: none;
+}
+
+.filter-chips-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-size-xs);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface-sunken);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) ease,
+              color var(--duration-fast) ease;
+}
+
+.filter-chip:hover {
+  background-color: var(--accent-subtle);
+  color: var(--accent);
+}
+
+.filter-chip.is-active {
+  background-color: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+}
+
+.filter-results-count {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin-inline-start: auto;
+}

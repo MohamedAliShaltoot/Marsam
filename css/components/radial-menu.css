@@ -1,0 +1,94 @@
+/**
+ * Boardly Long-Press Radial / Reaction Bubble Menu
+ * Floating arc/pill, spring magnification, staggered pop-in, tooltips
+ */
+.radial-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: var(--z-radial);
+  touch-action: none;
+}
+
+.radial-menu {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 12px;
+  background-color: var(--bg-surface-raised);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28), 0 4px 10px rgba(0, 0, 0, 0.12);
+  z-index: calc(var(--z-radial) + 1);
+  transform-origin: center bottom;
+  touch-action: none;
+  user-select: none;
+}
+
+.radial-bubble {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 160ms var(--ease-spring),
+              background-color 140ms ease,
+              box-shadow 160ms var(--ease-spring);
+  animation: popIn 220ms var(--ease-spring) backwards;
+  animation-delay: calc(var(--bubble-index, 0) * 35ms);
+}
+
+.radial-bubble svg {
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+/* WhatsApp-like Magnification on Hover / Pointer Over */
+.radial-bubble:hover,
+.radial-bubble.is-magnified {
+  transform: scale(1.36) translateY(-8px);
+  background-color: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 8px 18px var(--accent-subtle);
+  z-index: 10;
+}
+
+.radial-bubble__tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  padding: 4px 8px;
+  background-color: var(--text-primary);
+  color: var(--text-inverse);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 120ms ease, transform 120ms var(--ease-spring);
+}
+
+.radial-bubble:hover .radial-bubble__tooltip,
+.radial-bubble.is-magnified .radial-bubble__tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* Highlight applied to card/list while menu is open */
+.radial-target-highlight {
+  position: relative;
+  z-index: var(--z-radial) !important;
+  box-shadow: 0 0 0 3px var(--accent), var(--lift-shadow) !important;
+}

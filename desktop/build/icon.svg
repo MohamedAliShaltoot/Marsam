@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#241442"/>
+      <stop offset="50%" stop-color="#190e30"/>
+      <stop offset="100%" stop-color="#0f071f"/>
+    </linearGradient>
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ede9fe"/>
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="colGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b236e"/>
+      <stop offset="100%" stop-color="#2a1752"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="cardShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base with Deep Tactile Shadow -->
+  <rect x="64" y="64" width="896" height="896" rx="224" fill="url(#bgGrad)" filter="url(#shadow)"/>
+  <rect x="64" y="64" width="896" height="896" rx="224" fill="none" stroke="#7c3aed" stroke-width="4" stroke-opacity="0.4"/>
+
+  <!-- Column 1 (Left) -->
+  <rect x="180" y="200" width="280" height="624" rx="36" fill="url(#colGrad)" filter="url(#cardShadow)"/>
+  <rect x="216" y="250" width="208" height="130" rx="24" fill="url(#cardGrad1)" filter="url(#cardShadow)"/>
+  <rect x="240" y="280" width="100" height="14" rx="7" fill="#8b5cf6"/>
+  <rect x="240" y="310" width="160" height="12" rx="6" fill="#cbd5e1"/>
+
+  <rect x="216" y="410" width="208" height="180" rx="24" fill="url(#cardGrad2)" filter="url(#cardShadow)"/>
+  <rect x="240" y="440" width="110" height="14" rx="7" fill="#ffffff" fill-opacity="0.9"/>
+  <rect x="240" y="470" width="150" height="12" rx="6" fill="#ddd6fe"/>
+  <rect x="240" y="496" width="120" height="12" rx="6" fill="#ddd6fe"/>
+
+  <rect x="216" y="620" width="208" height="150" rx="24" fill="url(#cardGrad1)" filter="url(#cardShadow)"/>
+  <rect x="240" y="650" width="90" height="14" rx="7" fill="#10b981"/>
+  <rect x="240" y="680" width="140" height="12" rx="6" fill="#cbd5e1"/>
+
+  <!-- Column 2 (Right) -->
+  <rect x="564" y="200" width="280" height="624" rx="36" fill="url(#colGrad)" filter="url(#cardShadow)"/>
+  <rect x="600" y="250" width="208" height="220" rx="24" fill="url(#cardGrad1)" filter="url(#cardShadow)"/>
+  <rect x="624" y="280" width="110" height="14" rx="7" fill="#f59e0b"/>
+  <rect x="624" y="310" width="155" height="12" rx="6" fill="#cbd5e1"/>
+  <rect x="624" y="336" width="130" height="12" rx="6" fill="#cbd5e1"/>
+
+  <rect x="600" y="500" width="208" height="170" rx="24" fill="url(#cardGrad1)" filter="url(#cardShadow)"/>
+  <rect x="624" y="530" width="80" height="14" rx="7" fill="#8b5cf6"/>
+  <rect x="624" y="560" width="140" height="12" rx="6" fill="#cbd5e1"/>
+
+  <!-- Accent Circle Check Badge -->
+  <circle cx="740" cy="740" r="64" fill="#10b981" filter="url(#cardShadow)"/>
+  <path d="M710 740 L732 762 L774 720" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

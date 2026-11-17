@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-accent="violet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Boardly — Tactile Project Management</title>
+  <meta name="description" content="Offline-first, tactile Trello-style board with real 3D woven cloth depth, pointer gestures, and whiteboard.">
+  <meta name="theme-color" content="#e8e6e1">
+
+  <!-- Early Theme Init Script: Prevents Theme & Accent Flash -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('boardly_theme') || 'system';
+        const savedAccent = localStorage.getItem('boardly_accent') || 'violet';
+        let effectiveTheme = savedTheme;
+        if (savedTheme === 'system') {
+          effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', effectiveTheme);
+        document.documentElement.setAttribute('data-accent', savedAccent);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/fabric.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components/button.css">
+  <link rel="stylesheet" href="css/components/card.css">
+  <link rel="stylesheet" href="css/components/list.css">
+  <link rel="stylesheet" href="css/components/modal.css">
+  <link rel="stylesheet" href="css/components/toast.css">
+  <link rel="stylesheet" href="css/components/radial-menu.css">
+  <link rel="stylesheet" href="css/components/filter-bar.css">
+  <link rel="stylesheet" href="css/components/whiteboard.css">
+  <link rel="stylesheet" href="css/components/dropdown.css">
+</head>
+<body class="fabric-canvas">
+  <div id="svg-sprite-container" style="display: none;" aria-hidden="true"></div>
+  <div id="app"></div>
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+  <div id="radial-root"></div>
+
+  <!-- Main ES Module Bootstrap -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+/**
+ * Boardly Whiteboard Component
+ */
+.whiteboard-workspace {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-canvas-subtle);
+}
+
+.whiteboard-viewport {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.whiteboard-viewport.is-panning {
+  cursor: grab;
+}
+
+.whiteboard-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  touch-action: none;
+}
+
+/* Floating Toolbar */
+.whiteboard-toolbar {
+  position: absolute;
+  top: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 12px;
+  background-color: var(--bg-surface-raised);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  z-index: 20;
+}
+
+.wb-tool-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--duration-fast) ease;
+}
+
+.wb-tool-btn:hover {
+  background-color: var(--bg-surface-sunken);
+  color: var(--text-primary);
+}
+
+.wb-tool-btn.is-active {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.wb-tool-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Bottom Controls: Color, Pattern, Size */
+.whiteboard-bottom-bar {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 8px 16px;
+  background-color: var(--bg-surface-raised);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  z-index: 20;
+}
+
+.swatch-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.color-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-spring);
+}
+
+.color-swatch:hover {
+  transform: scale(1.2);
+}
+
+.color-swatch.is-selected {
+  border-color: var(--text-primary);
+  transform: scale(1.15);
+}
+
+.size-slider {
+  width: 80px;
+  cursor: pointer;
+}
+
+/* Side Zoom Controls */
+.whiteboard-zoom-sidebar {
+  position: absolute;
+  right: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 6px;
+  background-color: var(--bg-surface-raised);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  z-index: 20;
+}
+
+.wb-zoom-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  transition: all var(--duration-fast) ease;
+  cursor: pointer;
+}
+
+.wb-zoom-btn:hover {
+  background-color: var(--bg-surface-sunken);
+  color: var(--text-primary);
+}
+
+.wb-zoom-btn:active {
+  transform: scale(0.92);
+}
+
+.wb-zoom-label {
+  font-size: 10px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-muted);
+  padding-block: 2px;
+  user-select: none;
+}
