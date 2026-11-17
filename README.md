@@ -72,16 +72,16 @@
 
 ## ✨ Features at a Glance
 
-- 🧵 **3D Woven Cloth Depth**: Real depth falloff, dynamic mouse tilt parallax, and pressed-in surface styling using pure CSS tokens and SVG filters.
-- 🚀 **Zero Runtime Dependencies**: No React, no Vue, no Tailwind, no CDNs. Pure vanilla HTML5, CSS3, and native ES Modules.
-- 📦 **100% Offline-First**: All projects, boards, cards, and drawings persist locally in your browser's IndexedDB. Your data never leaves your device.
-- 🖐️ **Pointer Drag & Drop with FLIP**: Smooth pointer-based card and column reordering powered by fractional indexing and First-Last-Invert-Play animations.
-- 🔊 **Synthesized Web Audio Engine**: Zero audio file downloads. Every click, card lift, soft thud, and checklist arpeggio is synthesized dynamically in real time via Web Audio API.
-- ⭕ **Long-Press Radial Menu**: WhatsApp-inspired contextual action wheel for instant card operations on mobile and desktop.
-- 🖌️ **Built-in Vector Whiteboard**: Full drawing modal with pen, highlighter, shapes, arrows, color swatches, and background pattern generators.
-- 🌗 **Light, Dark & System Themes**: Multi-palette styling with customizable accent colors (Violet, Ocean, Emerald, Amber, Rose).
-- 💻 **Cross-Platform Desktop App**: Native Windows installer (NSIS 64-bit) with custom scheme `app://boardly/` for permanent storage isolation.
-- 📱 **Installable PWA**: Offline Service Worker shell caching with full Web App Manifest support.
+- **3D Woven Cloth Depth**: Real depth falloff, dynamic mouse tilt parallax, and pressed-in surface styling using pure CSS tokens and SVG filters.
+- **Zero Runtime Dependencies**: No React, no Vue, no Tailwind, no CDNs. Pure vanilla HTML5, CSS3, and native ES Modules.
+- **100% Offline-First**: All projects, boards, cards, and drawings persist locally in your browser's IndexedDB. Your data never leaves your device.
+- **Pointer Drag & Drop with FLIP**: Smooth pointer-based card and column reordering powered by fractional indexing and First-Last-Invert-Play animations.
+- **Synthesized Web Audio Engine**: Zero audio file downloads. Every click, card lift, soft thud, and checklist arpeggio is synthesized dynamically in real time via Web Audio API.
+- **Long-Press Radial Menu**: WhatsApp-inspired contextual action wheel for instant card operations on mobile and desktop.
+- **Built-in Vector Whiteboard**: Full drawing modal with pen, highlighter, shapes, arrows, color swatches, and background pattern generators.
+- **Light, Dark & System Themes**: Multi-palette styling with customizable accent colors (Violet, Ocean, Emerald, Amber, Rose).
+- **Cross-Platform Desktop App**: Native Windows installer (NSIS 64-bit) with custom scheme `app://boardly/` for permanent storage isolation.
+- **Installable PWA**: Offline Service Worker shell caching with full Web App Manifest support.
 
 ---
 
