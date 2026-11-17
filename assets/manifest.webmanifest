@@ -1,0 +1,17 @@
+{
+  "name": "Marsam — Tactile Project Management",
+  "short_name": "Marsam",
+  "description": "Offline-first, tactile project management with real 3D woven cloth depth, pointer gestures, and vector whiteboard.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f0e13",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
