@@ -1,0 +1,91 @@
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(8px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fabricSettle {
+  0% { transform: scale(1.03) translateY(-4px); }
+  50% { transform: scale(0.985) translateY(2px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+@keyframes fabricRipple {
+  0% { box-shadow: 0 0 0 0 var(--accent-subtle); }
+  70% { box-shadow: 0 0 0 16px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.anim-pop-in {
+  animation: popIn var(--duration-normal) var(--ease-spring) forwards;
+}
+
+.anim-fade-in {
+  animation: fadeIn var(--duration-fast) var(--ease-out) forwards;
+}
+
+.anim-slide-up {
+  animation: slideUpFade var(--duration-normal) var(--ease-out) forwards;
+}
+
+.anim-card-settle {
+  animation: fabricSettle 280ms var(--ease-spring);
+}
+
+.anim-fabric-ripple {
+  animation: fabricRipple 400ms var(--ease-out);
+}
+
+.flip-animating {
+  transition: transform var(--duration-fast) var(--ease-standard) !important;
+  will-change: transform;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 200ms;
+  animation-timing-function: var(--ease-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .anim-fade-in,
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 100ms !important;
+  }
+  .flip-animating {
+    transition: none !important;
+  }
+}
+
