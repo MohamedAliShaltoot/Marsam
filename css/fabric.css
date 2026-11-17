@@ -1,0 +1,124 @@
+.fabric-canvas {
+  background-color: var(--bg-canvas);
+  background-image: var(--fabric-tile, none);
+  background-repeat: repeat;
+  background-size: 128px 128px;
+  position: relative;
+}
+
+.board-viewport {
+  perspective: 1400px;
+  perspective-origin: center center;
+  overflow: hidden;
+  height: calc(100vh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
+}
+
+.board-parallax-plane {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 120ms ease-out;
+  will-change: transform;
+}
+
+.fabric-sunken-list {
+  position: relative;
+  background-color: var(--bg-surface-sunken);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow:
+    calc(var(--light-x) * -2.5px) calc(var(--light-y) * -2.5px) 18px var(--dent-ambient),
+    calc(var(--light-x) * -1px) calc(var(--light-y) * -1px) 4px var(--dent-tight),
+    inset calc(var(--light-x) * 1.5px) calc(var(--light-y) * 1.5px) 1px var(--dent-glint),
+    inset calc(var(--light-x) * -1px) calc(var(--light-y) * -1px) 2px rgba(0, 0, 0, 0.12);
+  transition: box-shadow var(--duration-normal) var(--ease-standard);
+}
+
+.fabric-sunken-list::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: calc(var(--radius-lg) + 8px);
+  background: radial-gradient(ellipse at 50% 50%, var(--dent-ambient) 20%, transparent 75%);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.fabric-sunken-card {
+  position: relative;
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  box-shadow:
+    calc(var(--light-x) * -1.2px) calc(var(--light-y) * -1.2px) 6px var(--dent-tight),
+    inset calc(var(--light-x) * 1px) calc(var(--light-y) * 1px) 0.5px var(--dent-glint),
+    inset calc(var(--light-x) * -0.8px) calc(var(--light-y) * -0.8px) 1.5px rgba(0, 0, 0, 0.08);
+  transition: transform var(--duration-fast) var(--ease-standard),
+              box-shadow var(--duration-fast) var(--ease-standard),
+              border-color var(--duration-fast) var(--ease-standard);
+}
+
+.fabric-sunken-card::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: calc(var(--radius-md) + 3px);
+  background: radial-gradient(ellipse at 50% 50%, var(--dent-ambient) 10%, transparent 75%);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.fabric-sunken-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.fabric-card-lifted {
+  z-index: var(--z-card-drag) !important;
+  cursor: grabbing !important;
+  transform: scale(1.045) rotate(2.2deg) !important;
+  box-shadow: var(--lift-shadow) !important;
+  border-color: var(--accent) !important;
+  will-change: transform, box-shadow;
+}
+
+.fabric-card-lifted::before {
+  opacity: 0 !important;
+}
+
+.ink-printed-content {
+  position: relative;
+}
+
+.ink-printed-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background-image: var(--ink-tile, none);
+  background-repeat: repeat;
+  background-size: 64px 64px;
+  opacity: var(--ink-noise-opacity);
+  mix-blend-mode: var(--blend-mode-ink);
+}
+
+[data-visuals="lite"] .fabric-sunken-list,
+[data-visuals="lite"] .fabric-sunken-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+[data-visuals="lite"] .fabric-sunken-list::before,
+[data-visuals="lite"] .fabric-sunken-card::before,
+[data-visuals="lite"] .ink-printed-content::after {
+  display: none !important;
+}
+[data-visuals="lite"] .board-parallax-plane {
+  transform: none !important;
+  transition: none !important;
+}
+
