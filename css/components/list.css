@@ -1,0 +1,116 @@
+.board-list {
+  width: var(--list-width);
+  min-width: var(--list-width);
+  max-height: calc(100vh - var(--header-height) - var(--space-8));
+  max-height: calc(100dvh - var(--header-height) - var(--space-8));
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  user-select: none;
+  scroll-snap-align: start;
+}
+
+.board-list__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-3) var(--space-2) var(--space-4);
+  position: relative;
+  cursor: grab;
+}
+
+.board-list__header:active {
+  cursor: grabbing;
+}
+
+.board-list__title-area {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 0;
+}
+
+.board-list__color-bar {
+  width: 4px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background-color: var(--accent);
+  flex-shrink: 0;
+}
+
+.board-list__title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+}
+
+.board-list__title:hover {
+  background-color: var(--bg-surface);
+}
+
+.board-list__count {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-weight: var(--font-weight-medium);
+  padding: 2px 6px;
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-full);
+}
+
+.board-list__cards {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-height: 36px;
+}
+
+.board-list__footer {
+  padding: var(--space-2) var(--space-3);
+}
+
+.btn-add-card-compact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  width: 100%;
+  padding: 4px 8px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  transition: all var(--duration-fast) var(--ease-standard);
+  cursor: pointer;
+  height: 28px;
+}
+
+.btn-add-card-compact:hover {
+  background-color: var(--accent-subtle);
+  color: var(--accent);
+}
+
+.btn-add-card-compact svg {
+  width: 14px;
+  height: 14px;
+}
+
+.dnd-placeholder {
+  border: 2px dashed var(--accent);
+  background-color: var(--accent-subtle);
+  border-radius: var(--radius-md);
+  min-height: 54px;
+  transition: height var(--duration-fast) var(--ease-standard);
+  pointer-events: none;
+}
+
